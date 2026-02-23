@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Nova Mensagem de Contato</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f6f8; font-family: Arial, Helvetica, sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f4f6f8">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+
+        <!-- Container -->
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff; border-radius:10px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+
+          <!-- Header -->
+          <tr>
+            <td align="center" bgcolor="#111827" style="padding:30px;">
+              <h1 style="color:#ffffff; margin:0; font-size:22px;">
+                GRYN Sports
+              </h1>
+              <p style="color:#9ca3af; margin:5px 0 0; font-size:14px;">
+                Nova mensagem recebida
+              </p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:30px; color:#374151; font-size:15px; line-height:1.6;">
+
+              <p style="margin-top:0;">
+                Você recebeu uma nova mensagem através da Landing Page:
+              </p>
+
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:20px;">
+                <tr>
+                  <td style="padding:8px 0;"><strong>Nome:</strong></td>
+                  <td style="padding:8px 0;">${req.body.name}</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 0;"><strong>Email:</strong></td>
+                  <td style="padding:8px 0;">${req.body.email}</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 0;"><strong>Assunto:</strong></td>
+                  <td style="padding:8px 0;">${subject}</td>
+                </tr>
+              </table>
+
+              <!-- Mensagem -->
+              <div style="margin-top:25px;">
+                <p style="margin-bottom:8px;"><strong>Mensagem:</strong></p>
+                <div style="background:#f9fafb; border:1px solid #e5e7eb; padding:15px; border-radius:6px; font-size:14px;">
+                  ${text}
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div style="text-align:center; margin-top:30px;">
+                <a href="mailto:${req.body.email}"
+                   style="background:#2563eb; color:#ffffff; text-decoration:none; padding:12px 25px; border-radius:6px; display:inline-block; font-weight:bold;">
+                  Responder Cliente
+                </a>
+              </div>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align="center" bgcolor="#f3f4f6" style="padding:20px; font-size:12px; color:#6b7280;">
+              Esta mensagem foi enviada pelo formulário de contato da<br>
+              <strong>GRYN Sports</strong><br><br>
+              © ${new Date().getFullYear()} GRYN Sports. Todos os direitos reservados.
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
